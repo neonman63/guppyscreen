@@ -14,6 +14,8 @@ namespace fs = std::experimental::filesystem;
 
 #define THUMBSCALE = 0.78
 
+LV_FONT_DECLARE(notosans_40);
+
 FilePanel::FilePanel(lv_obj_t *parent)
   : file_cont(lv_obj_create(parent))
   , thumbnail(lv_img_create(file_cont))
@@ -26,6 +28,7 @@ FilePanel::FilePanel(lv_obj_t *parent)
   lv_obj_set_width(fname_label, LV_PCT(90));
   lv_label_set_long_mode(fname_label, LV_LABEL_LONG_SCROLL);
   lv_obj_set_style_text_align(fname_label, LV_TEXT_ALIGN_CENTER, 0);
+  lv_obj_set_style_text_font(fname_label, &notosans_40, LV_STATE_DEFAULT);
   
 
   static lv_coord_t grid_main_row_dsc[] = {LV_GRID_FR(3), LV_GRID_FR(2), LV_GRID_TEMPLATE_LAST};
