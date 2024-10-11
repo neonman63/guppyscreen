@@ -1,6 +1,7 @@
 name: guppy build
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "develop", "main" ]
     tags:
