@@ -376,7 +376,7 @@ extern uint32_t custom_tick_get(void);
 #define LV_FONT_CUSTOM_DECLARE LV_FONT_DECLARE(notosans_12) LV_FONT_DECLARE(notosans_16) LV_FONT_DECLARE(notosans_20)
 
 /*Always set a default font*/
-#define LV_FONT_DEFAULT &lv_font_notosans_16
+#define LV_FONT_DEFAULT &notosans_16
 
 /*Enable handling large font and/or fonts with a lot of characters.
  *The limit depends on the font size, font face and bpp.
