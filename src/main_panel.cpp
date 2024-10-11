@@ -14,7 +14,7 @@ LV_IMG_DECLARE(bed);
 LV_IMG_DECLARE(fan);
 LV_IMG_DECLARE(heater);
 
-LV_FONT_DECLARE(materialdesign_font_40);
+LV_FONT_DECLARE(notosans_40);
 #define MACROS_SYMBOL "\xF3\xB1\xB2\x83"
 #define CONSOLE_SYMBOL "\xF3\xB0\x86\x8D"
 #define TUNE_SYMBOL "\xF3\xB1\x95\x82"
@@ -141,7 +141,7 @@ void MainPanel::create_panel() {
   lv_obj_set_style_bg_color(tab_btns, lv_palette_main(LV_PALETTE_GREY), LV_STATE_CHECKED | LV_PART_ITEMS);
   lv_obj_set_style_outline_width(tab_btns, 0, LV_PART_ITEMS | LV_STATE_FOCUS_KEY | LV_STATE_FOCUS_KEY);
   lv_obj_set_style_border_side(tab_btns, 0, LV_PART_ITEMS | LV_STATE_CHECKED);
-  lv_obj_set_style_text_font(tab_btns, &materialdesign_font_40, LV_STATE_DEFAULT);
+  lv_obj_set_style_text_font(tab_btns, &notosans_40, LV_STATE_DEFAULT);
 
   // lv_obj_set_style_text_font(lv_scr_act(), LV_FONT_DEFAULT, 0);
 
