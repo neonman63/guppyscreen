@@ -25,11 +25,11 @@ ExtruderPanel::ExtruderPanel(KWebSocketClient &websocket_client,
   , extruder_temp(ws, panel_cont, &extruder, 150,
 	  "Extruder", lv_palette_main(LV_PALETTE_RED), false, true, numpad, "extruder", NULL, NULL)
   , temp_selector(panel_cont, "Extruder Temperature (C)",
-		  {"180", "190", "200", "210", "220", "230", "240", ""}, 6, &ExtruderPanel::_handle_callback, this)
+		  {"190", "210", "230", "250", "280", "300", "320", ""}, 6, &ExtruderPanel::_handle_callback, this)
   , length_selector(panel_cont, "Extrude Length (mm)",
-		    {"5", "10", "15", "20", "25", "30", "35", ""}, 1, &ExtruderPanel::_handle_callback, this)
+		  {"20", "50", "70", "100", "150", "200", "400", ""}, 1, &ExtruderPanel::_handle_callback, this)
   , speed_selector(panel_cont, "Extrude Speed (mm/s)",
-		   {"1", "2", "5", "10", "25", "35", "50", ""}, 2, &ExtruderPanel::_handle_callback, this)
+		  {"1", "2", "5", "10", "25", "35", "50", ""}, 2, &ExtruderPanel::_handle_callback, this)
   , rightside_btns_cont(lv_obj_create(panel_cont))
   , leftside_btns_cont(lv_obj_create(panel_cont))
   , load_btn(leftside_btns_cont, &load_filament_img, "Load", &ExtruderPanel::_handle_callback, this)
