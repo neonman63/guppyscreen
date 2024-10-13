@@ -143,6 +143,9 @@ wpaclean:
 
 clean:
 	rm -rf $(BUILD_DIR)
+	find ./ \( -name '*.d' -o -name '*.a' -o -name '*.o' \) -delete
+	rm -rf spdlog/build
+	rm -rf releases/
 
 install:
 	install -d $(DESTDIR)$(bindir)

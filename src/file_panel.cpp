@@ -12,7 +12,7 @@
 
 namespace fs = std::experimental::filesystem;
 
-#define THUMBSCALE = 0.78
+#define THUMBSCALE = 0.5
 
 FilePanel::FilePanel(lv_obj_t *parent)
   : file_cont(lv_obj_create(parent))
@@ -26,7 +26,6 @@ FilePanel::FilePanel(lv_obj_t *parent)
   lv_obj_set_width(fname_label, LV_PCT(90));
   lv_label_set_long_mode(fname_label, LV_LABEL_LONG_SCROLL);
   lv_obj_set_style_text_align(fname_label, LV_TEXT_ALIGN_CENTER, 0);
-  
 
   static lv_coord_t grid_main_row_dsc[] = {LV_GRID_FR(3), LV_GRID_FR(2), LV_GRID_TEMPLATE_LAST};
   static lv_coord_t grid_main_col_dsc[] = {LV_GRID_FR(1), LV_GRID_TEMPLATE_LAST};
@@ -72,7 +71,7 @@ void FilePanel::refresh_view(json &j, const std::string &gcode_path) {
 
   auto width_scale = (double)lv_disp_get_physical_hor_res(NULL) / 800.0;
   auto thumb_detail = KUtils::get_thumbnail(gcode_path, j, width_scale);
-  std::string fullpath = thumb_detail.first;    
+  std::string fullpath = thumb_detail.first;
   if (fullpath.length() > 0) {
     lv_label_set_text(detail_label, detail.c_str());
     auto screen_width = lv_disp_get_physical_hor_res(NULL);
