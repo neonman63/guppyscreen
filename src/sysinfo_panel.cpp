@@ -47,11 +47,11 @@ static std::map<int32_t, uint32_t> sleepsec_to_dd_idx = {
 
 static std::map<std::string, uint32_t> sleep_label_to_sec = {
   {"Never", -1}, // never
-  {"5 Minutes", 300}, // 5 min
-  {"10 Minutes", 600}, // 10 min
-  {"30 Minutes", 1800}, // 30 min
-  {"1 Hour", 3600}, // 1 hour
-  {"5 Hours", 18000} // 5 hour
+  {"5m", 300}, // 5 min
+  {"10m", 600}, // 10 min
+  {"30m", 1800}, // 30 min
+  {"1h", 3600}, // 1 hour
+  {"5h", 18000} // 5 hour
 };
 
 SysInfoPanel::SysInfoPanel()
@@ -90,12 +90,12 @@ SysInfoPanel::SysInfoPanel()
   lv_obj_set_flex_flow(cont, LV_FLEX_FLOW_ROW);
 
   lv_obj_clear_flag(left_cont, LV_OBJ_FLAG_SCROLLABLE);
-  lv_obj_set_size(left_cont, LV_PCT(50), LV_PCT(100));
+  lv_obj_set_size(left_cont, LV_PCT(60), LV_PCT(100));
   lv_obj_set_flex_flow(left_cont, LV_FLEX_FLOW_COLUMN);
   lv_obj_set_flex_align(left_cont, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
 
   lv_obj_clear_flag(right_cont, LV_OBJ_FLAG_SCROLLABLE);
-  lv_obj_set_size(right_cont, LV_PCT(50), LV_PCT(100));  
+  lv_obj_set_size(right_cont, LV_PCT(40), LV_PCT(100));  
   lv_obj_set_flex_flow(right_cont, LV_FLEX_FLOW_COLUMN);
   lv_obj_set_flex_align(right_cont, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_START);
 
@@ -108,11 +108,11 @@ SysInfoPanel::SysInfoPanel()
   lv_obj_align(display_sleep_dd, LV_ALIGN_RIGHT_MID, 0, 0);
   lv_dropdown_set_options(display_sleep_dd,
 			  "Never\n"
-			  "5 Minutes\n"
-			  "10 Minutes\n"
-			  "30 Minutes\n"
-			  "1 Hour\n"
-			  "5 Hours");
+			  "5m\n"
+			  "10m\n"
+			  "30m\n"
+			  "1h\n"
+			  "5h");
 
   auto v = conf->get_json("/display_sleep_sec");
   if (!v.is_null()) {

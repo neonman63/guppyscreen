@@ -373,10 +373,10 @@ extern uint32_t custom_tick_get(void);
 /*Optionally declare custom fonts here.
  *You can use these fonts as default font too and they will be available globally.
  *E.g. #define LV_FONT_CUSTOM_DECLARE   LV_FONT_DECLARE(my_font_1) LV_FONT_DECLARE(my_font_2)*/
-#define LV_FONT_CUSTOM_DECLARE
+#define LV_FONT_CUSTOM_DECLARE LV_FONT_DECLARE(notosemi_12) LV_FONT_DECLARE(notosemi_14) LV_FONT_DECLARE(notosemi_16) LV_FONT_DECLARE(notosemi_20)
 
 /*Always set a default font*/
-#define LV_FONT_DEFAULT &lv_font_montserrat_16
+#define LV_FONT_DEFAULT &notosemi_20
 
 /*Enable handling large font and/or fonts with a lot of characters.
  *The limit depends on the font size, font face and bpp.
@@ -387,7 +387,7 @@ extern uint32_t custom_tick_get(void);
 #define LV_USE_FONT_COMPRESSED 1
 
 /*Enable subpixel rendering*/
-#define LV_USE_FONT_SUBPX 0
+#define LV_USE_FONT_SUBPX 1
 #if LV_USE_FONT_SUBPX
     /*Set the pixel order of the display. Physical order of RGB channels. Doesn't matter with "normal" fonts.*/
     #define LV_FONT_SUBPX_BGR 0  /*0: RGB; 1:BGR order*/
